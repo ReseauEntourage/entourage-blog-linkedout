@@ -1,0 +1,12 @@
+#!/bin/bash
+
+function termoptions() {
+  if [ -t 0 ]; then
+    echo --env COLUMNS=`tput cols` \
+         --env LINES=`tput lines`
+  else
+    echo -T
+  fi
+}
+
+docker-compose exec $(termoptions) wordpress "${@:-bash}"

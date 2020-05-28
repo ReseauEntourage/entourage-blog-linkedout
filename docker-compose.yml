@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:
+
+  wordpress:
+    build:
+      context: .
+    ports:
+      - 8080:80
+    restart: always
+    environment:
+      WORDPRESS_DB_PASSWORD: PrpRP4vS
+    volumes:
+      - ./src:/var/www/html/wp-content/themes/entourage-blog-lko
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: PrpRP4vS
+      MYSQL_DATABASE: wordpress

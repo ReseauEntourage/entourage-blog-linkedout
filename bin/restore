@@ -1,0 +1,8 @@
+#!/bin/bash
+
+wp_content=/var/www/html/wp-content
+bin/exec mkdir -p $wp_content/ai1wm-backups
+cat $1 | bin/exec cp /dev/stdin $wp_content/ai1wm-backups/backup.wpress
+bin/exec mkdir -p $wp_content/plugins/all-in-one-wp-migration/storage/
+bin/wp ai1wm restore backup.wpress
+bin/exec chown -R www-data:www-data $wp_content

@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+SRC_DIR=src
+DATE=$(date +%Y-%m-%d)
+EXPORT_NAME=SCB-$DATE
+BUILD_DIR=/tmp
+BUILD_PATH="$BUILD_DIR/$EXPORT_NAME"
+OUTPUT_DIR="$HOME/Downloads"
+OUTPUT_PATH="$OUTPUT_DIR/$EXPORT_NAME.zip"
+
+rm -rf "$BUILD_PATH"
+cp -r "$SRC_DIR" "$BUILD_PATH"
+cd "$BUILD_PATH"
+sed -i '' "/^Theme Name:/ s/$/ $DATE/" style.css
+cd "$BUILD_DIR"
+rm -rf "$OUTPUT_PATH"
+zip --quiet --recurse-paths "$OUTPUT_PATH" "$EXPORT_NAME"
+cd - > /dev/null
+echo "$OUTPUT_PATH"
