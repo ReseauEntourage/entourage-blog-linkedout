@@ -84,8 +84,8 @@
 
 	<header id="site-header" role="banner">
 		<div id="site-header-fixed">
-			<a id="site-header-logo" href="https://www.entourage.social/">
-				<img src="<?php asset_url('img/logo-entourage-orange.png'); ?>" alt="Logo de l'association Entourage" title="Association Entourage"/>
+			<a id="site-header-logo" href="https://linkedout.fr/">
+				<img src="<?php asset_url('img/linkedout_logo_orange.png'); ?>" alt="Logo de LinkedOut" title="LinkedOut"/>
 			</a>
 			<div id="site-header-nav">
 				<a id="site-header-nav-mobile">

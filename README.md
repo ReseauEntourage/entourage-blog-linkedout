@@ -5,7 +5,7 @@ $ docker-compose up -d
 
 # Setup the default WordPress instance
 ```
-$ bin/setup`
+$ bin/setup
 ```
 
 # Restore from an export of the site
